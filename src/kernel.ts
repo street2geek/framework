@@ -103,6 +103,8 @@ export default class Kernel {
    */
   public initialiseDefaultConfig(): Config {
     return {
+      port: 80,
+      hostname: "localhost",
       strictContentNegotiation: false,
       server: {
         manager: new DefaultServerManager(),
@@ -119,7 +121,8 @@ export default class Kernel {
    * Serve the application.
    */
   public serve() {
-    const port = this.config?.port ?? 80;
+    const port = this.config?.port;
+    const hostname = this.config?.hostname;
 
     const handler = (request: Request) => this.respond(request);
 
@@ -129,10 +132,10 @@ export default class Kernel {
       return;
     }
 
-    this.serverManager.serve(handler, { port });
+    this.serverManager.serve(handler, { port, hostname });
 
     console.log(
-      `🦖 Raptor started on port ${port}...`,
+      `🦕 Raptor started on port ${port}...`,
     );
   }
 
@@ -260,6 +263,11 @@ export default class Kernel {
       const body = await middleware(context, next);
 
       if (called || !body) return;
+
+      if (body instanceof Response) {
+        context.response = body;
+        return;
+      }
 
       await this.processMiddlewareResponse(body, context);
     } catch (error) {

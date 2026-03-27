@@ -14,6 +14,13 @@ export interface Config {
   port?: number;
 
   /**
+   * The hostname the kernel will use to serve the appliation.
+   *
+   * @default "localhost"
+   */
+  hostname?: string;
+
+  /**
    * Enable strict RFC 7231 content negotiation.
    *
    * When true, throws not acceptable if response cannot match accept header.
