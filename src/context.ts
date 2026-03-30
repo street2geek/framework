@@ -1,9 +1,9 @@
-import type { HttpError } from "./interfaces/http-error.ts";
+import type { Context as ContextInterface, HttpError } from "@raptor/types";
 
 /**
  * The context definition.
  */
-export default class Context {
+export default class Context implements ContextInterface {
   /**
    * The current HTTP request.
    */

@@ -1,4 +1,4 @@
-import type { HttpError } from "../interfaces/http-error.ts";
+import type { HttpError } from "@raptor/types";
 
 /**
  * An error used primarily in 409 conflict request errors.

@@ -1,8 +1,9 @@
 // deno-lint-ignore-file no-explicit-any
 
+import type { HttpError } from "@raptor/types";
+
 import type Context from "../../context.ts";
 import ContentNegotiator from "../content-negotiator.ts";
-import type { HttpError } from "../../interfaces/http-error.ts";
 import type { ResponseProcessor } from "../../interfaces/response-processor.ts";
 
 /**

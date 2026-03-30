@@ -1,10 +1,10 @@
 /// <reference lib="deno.ns" />
 // deno-lint-ignore-file
 
+import type { Context } from "@raptor/types";
 import { assertEquals } from "jsr:@std/assert";
 
 import Kernel from "./kernel.ts";
-import type Context from "./context.ts";
 import NotFound from "./error/not-found.ts";
 import BadRequest from "./error/bad-request.ts";
 import ServerError from "./error/server-error.ts";

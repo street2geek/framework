@@ -1,6 +1,6 @@
 {
   "name": "@raptor/kernel",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "exports": "./mod.ts",
   "compilerOptions": {
     "lib": [
@@ -33,6 +33,7 @@
   },
   "lock": false,
   "imports": {
+    "@raptor/types": "jsr:@raptor/types@^0.1.0",
     "@std/assert": "jsr:@std/assert@^1.0.18"
   }
 }

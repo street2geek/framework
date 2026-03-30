@@ -1,11 +1,10 @@
+import type { ErrorHandler, HttpError, Middleware } from "@raptor/types";
+
 import Context from "./context.ts";
 import DefaultServerManager from "./server/manager.ts";
 import DefaultResponseManager from "./response/manager.ts";
 
 import type { Config } from "./config.ts";
-import type { Middleware } from "./types/middleware.ts";
-import type { HttpError } from "./interfaces/http-error.ts";
-import type { ErrorHandler } from "./types/error-handler.ts";
 import type { ServerManager } from "./interfaces/server-manager.ts";
 import type { ResponseManager } from "./interfaces/response-manager.ts";
 
